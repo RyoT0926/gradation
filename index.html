@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gradation</title>
+</head>
+<body>
+  <h1>GRADATION</h1>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+    h1 {
+      color: #fff;
+      font-family: 'Niconne', cursive;
+      letter-spacing: 0.05em;
+      font-size: 3rem;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, .1), 0 2px 20px rgba(0, 0, 0, .04);
+      text-decoration: dashed;
+      text-decoration-color: black;
+    }
+    html {
+      position: relative;
+      overflow: hidden;
+    }
+    html::before {
+      content: "";
+      display: block;
+      width: 200vmax;
+      height: auto;
+      aspect-ratio: 1;
+      background-image: url(b.jpg);
+      filter: blur(250vmax);
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      transform-origin: 0 0;
+      z-index: -1;
+      animation: rotate 4s linear infinite;
+    }
+    @keyframes rotate {
+      0% {
+        rotate: 0;
+      }
+      100% {
+        rotate: 360deg;
+      }
+    }
+  </style>
+</body>
+</html>
